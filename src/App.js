@@ -1,25 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyles from './styles/global';
+import { BrowserRouter } from 'react-router-dom';
+// O BrowserRouter é importado aqui e não no arquivo de rotas porque eu preciso que outros componentes tenham acesso as propriedades das rotas como o Header
+import Header from './components/Header';
+import Routes from './routes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes />
+      <GlobalStyles />
+    </BrowserRouter>
   );
 }
 
